@@ -15,11 +15,13 @@ def data_loader_process(path=None, second_path = None, mode="train"):
         print("Construct for train dataset")
         with open(path ,'rb') as f:
             positive_data = pickle.load(f)
+        
+        negative_data = []
+        for p in second_path:
+            with open(p ,'rb') as f:
+                d = pickle.load(f)
+                negative_data.extend(d)
 
-        with open(second_path ,'rb') as f:
-            negative_data = pickle.load(f)
-
-        # testing 原本是//4
         negative_data = negative_data[:len(negative_data)//4]
         positive_data = positive_data[:len(negative_data)]
 
@@ -52,8 +54,11 @@ def data_loader_process(path=None, second_path = None, mode="train"):
         with open(path ,'rb') as f:
             positive_data = pickle.load(f)
 
-        with open(second_path ,'rb') as f:
-            negative_data = pickle.load(f)
+        negative_data = []
+        for p in second_path:
+            with open(p ,'rb') as f:
+                d = pickle.load(f)
+                negative_data.extend(d)
 
 
         negative_data = [x for x in negative_data if x == x] #delete nan

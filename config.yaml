@@ -4,8 +4,10 @@ TRAIN:
     EPSILON: 1.0e-8
     EPOCHS: 100
     TARGET_PATH: "./data/real_train_data.pickle" 
-    SUPPORT_PATH: "./data/fake_train_data.pickle"
+    #SUPPORT_PATH: ["./data/fake_train_data.pickle"]
+    SUPPORT_PATH: ["./data/gpt2_data.pickle", "./data/fake_train_data.pickle"] #use augmentation method
+
 
 TEST:
     TARGET_PATH: "./data/real_test_data.pickle" 
-    SUPPORT_PATH: "./data/fake_test_data.pickle"
+    SUPPORT_PATH: ["./data/fake_test_data.pickle"]
