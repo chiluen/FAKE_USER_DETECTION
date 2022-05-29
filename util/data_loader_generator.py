@@ -22,7 +22,7 @@ def data_loader_process(path=None, second_path = None, mode="train"):
                 d = pickle.load(f)
                 negative_data.extend(d)
 
-        negative_data = negative_data[:len(negative_data)//4]
+        negative_data = negative_data[:len(negative_data)//2]
         positive_data = positive_data[:len(negative_data)]
 
         negative_data = [x for x in negative_data if x == x] #delete nan

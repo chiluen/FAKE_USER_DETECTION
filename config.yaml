@@ -2,7 +2,7 @@ TRAIN:
     LEARNING_RATE: 2.0e-5
     WEIGHT_DECAY: 1.0e-2
     EPSILON: 1.0e-8
-    EPOCHS: 100
+    EPOCHS: 20
     TARGET_PATH: "./data/real_train_data.pickle" 
     #SUPPORT_PATH: ["./data/fake_train_data.pickle"]
     SUPPORT_PATH: ["./data/gpt2_data.pickle", "./data/fake_train_data.pickle"] #use augmentation method

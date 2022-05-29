@@ -85,8 +85,8 @@ if args.mode == 'train':
             loss.backward()
             optimizer.step()
 
-            #record every 100 steps
-            if step % 100 == 0 and step != 0:
+            #record every 1000 steps
+            if step % 1000 == 0 and step != 0:
                 loss = torch.FloatTensor(record_loss).mean().item()
                 acc = torch.FloatTensor(record_acc).mean().item()
                 wandb.log({"training_loss": loss})
@@ -101,7 +101,6 @@ if args.mode == 'train':
         record_loss = []
         record_acc = []
         record_output = []
-        import ipdb; ipdb.set_trace()
         for batch in test_dataloader:
 
             batch = tuple(t.to(device) for t in batch)
